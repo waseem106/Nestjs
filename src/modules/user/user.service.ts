@@ -1,4 +1,4 @@
-import { Get, Injectable } from '@nestjs/common';
+import { Get, HttpCode, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { User, UserDocument } from './schemas/user.schema';
 import { Model } from 'mongoose';
@@ -16,7 +16,14 @@ export class UserService {
         return createUserDto.save()
     }
     @Get()
+  @HttpCode(205)
+
     getHi(){
         return 'this is the data of user'
     }
+
+    mytesting(){
+        return 'testing purpose '
+    }
+
 }

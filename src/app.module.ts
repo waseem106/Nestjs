@@ -1,13 +1,14 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { TestingController } from './testing/testing.controller';
-import { UserModule } from './user/user.module';
+import { TestingController } from './modules/testing/testing.controller';
+import { UserModule } from './modules/user/user.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
-import { AuthModule } from './auth/auth.module';
-import { BookmarkModule } from './bookmark/bookmark.module';
-import { UserService } from './user/user.service';
+import { AuthModule } from './modules/auth/auth.module';
+import { BookmarkModule } from './modules/bookmark/bookmark.module';
+import { CarModule } from './modules/car/car.module';
+
 
 
 @Module({
@@ -18,7 +19,8 @@ import { UserService } from './user/user.service';
     MongooseModule.forRoot(process.env.MONGO_URI || ''),
     UserModule,
     AuthModule,
-    BookmarkModule
+    BookmarkModule,
+    CarModule
   ],
   controllers: [AppController, TestingController],
   providers: [AppService]

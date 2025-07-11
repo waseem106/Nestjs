@@ -17,4 +17,9 @@ export class UserController {
         return 'Welcome to the user dashboard'
     }
 
+    @Get('newdata')
+    newData(){
+        return 'Welcome to the new user data function'
+    }
+
 }

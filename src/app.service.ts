@@ -8,7 +8,7 @@ export class AppService {
   getData():string{
     return "hi it is waseem"
   }
-  getInfo():string{
-    return 'hi how are you'
+  getInfo(name:string):string{
+    return `Hi,${name} Welcome to the NEST`
   }
 }
