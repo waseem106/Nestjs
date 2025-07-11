@@ -32,5 +32,9 @@ export class AppController {
     return this.userService.getHi();
   }
 
+  @Get('mytest')
+  testing(){
+    return this.userService.mytesting()
+  }
     
 }

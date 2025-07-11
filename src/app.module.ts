@@ -7,7 +7,8 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 import { AuthModule } from './auth/auth.module';
 import { BookmarkModule } from './bookmark/bookmark.module';
-import { UserService } from './user/user.service';
+import { CarModule } from './car/car.module';
+
 
 
 @Module({
@@ -18,7 +19,8 @@ import { UserService } from './user/user.service';
     MongooseModule.forRoot(process.env.MONGO_URI || ''),
     UserModule,
     AuthModule,
-    BookmarkModule
+    BookmarkModule,
+    CarModule
   ],
   controllers: [AppController, TestingController],
   providers: [AppService]
